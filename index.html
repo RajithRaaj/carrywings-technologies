@@ -19,31 +19,83 @@
             font-family: 'Inter', sans-serif;
             color: #333;
         }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #00FFF7, #8C52FF, #FF00D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(140, 82, 255, 0.5);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease-in-out;
+}
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            color: #1a202c; /* Dark grey for headings */
-        }
+/* Header animation for "bounce" inspiration */
+@keyframes headerBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+.animate-header-bounce {
+    animation: headerBounce 3s infinite ease-in-out;
+}
 
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
+/* Hero section background overlay and text animations */
+.hero-overlay {
+    /* Add these properties inside the curly braces */
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* This provides the dark overlay */
+    z-index: -1; /* Puts the overlay on top of the GIF/Video but behind the text */
+}
 
-        /* Header animation for "bounce" inspiration */
-        @keyframes headerBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        .animate-header-bounce {
-            animation: headerBounce 3s infinite ease-in-out;
-        }
+/* Add the hero-background-gif class definition here */
+.hero-background-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the GIF covers the area without distortion */
+    z-index: -2; /* Places the GIF behind the overlay and text */
+}
 
-        /* Hero section background overlay and text animations */
-        .hero-overlay {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));
-        }
+/* WhatsApp Contact Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 15px 22px;
+    border-radius: 50px;
+    box-shadow: 0 6px 12px rgba(37, 211, 102, 0.5);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
 
+.whatsapp-btn:hover {
+    background: #128C4A;
+    box-shadow: 0 8px 20px rgba(18, 140, 74, 0.7);
+    transform: scale(1.05);
+}
+
+.whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -151,37 +203,33 @@
                 <h1 class="text-2xl font-extrabold text-blue-600 animate-fade-in-down" style="animation-delay: 0.1s;"> </h1>
             </div>
             <ul class="flex space-x-8 text-lg font-medium">
-                <li><a href="#hero" class="hover:text-blue-600 transition-colors duration-300">Home</a></li>
                 <li><a href="#who-we-are" class="hover:text-blue-600 transition-colors duration-300">about us</a></li>
                 <li><a href="#services" class="hover:text-blue-600 transition-colors duration-300">Services</a></li>
-                <li><a href="#methodology" class="hover:text-blue-600 transition-colors duration-300">Methodology</a></li>
-                <li><a href="#technology" class="hover:text-blue-600 transition-colors duration-300">Technology</a></li>
-                <li><a href="#agile-workflow" class="hover:text-blue-600 transition-colors duration-300">Agile</a></li>
-                <li><a href="#clients" class="hover:text-blue-600 transition-colors duration-300">Clients</a></li>
-                <li><a href="#testimonials" class="hover:text-blue-600 transition-colors duration-300">Testimonials</a></li>
                 <li><a href="#contact" class="hover:text-blue-600 transition-colors duration-300">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="pt-20">
-        <section id="hero" class="relative bg-cover bg-center h-[700px] flex items-center justify-center text-white" style="background-image: url('https://source.unsplash.com/1600x900/?it-company,tech,innovation');">
-            <div class="hero-overlay absolute inset-0"></div>
-            <div class="container mx-auto px-6 text-center z-10">
-                <p class="text-xl md:text-2xl mb-4 animate-fade-in-down" style="animation-delay: 0.2s;">🚀 The Pioneer in Cutting-Edge IT Solutions</p>
-                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down" style="animation-delay: 0.4s;">
-                    Carrywings Technologies.
-                </h2>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up" style="animation-delay: 0.6s;">
-                    Crafting bespoke IT solutions that drive growth and redefine possibilities for your business.
-                <p>
-<a href="#contact" class="inline-block p-4 bg-white rounded-full shadow-lg cursor-pointer transform hover:scale-110 transition-transform duration-300 animate-fade-in-up flex items-center justify-center space-x-2" style="animation-delay: 0.8s;">
-    <span class="text-gray-800 font-semibold">connect with us </span>
-    <span class="sr-only">Scroll down to contact us</span>
-</a>
-            </div>
-        </section>
+   <main class="pt-20">
+    <section id="hero" class="relative bg-cover bg-center h-[700px] flex items-center justify-center text-white">
+        <img src="https://i.ibb.co/v6MZcBxL/carrywings-background-mp4.gif" alt="Animated background" class="hero-background-gif">
 
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-6 text-center z-10">
+            <p class="text-xl md:text-2xl mb-4 animate-fade-in-down" style="animation-delay: 0.2s;">🚀 The Pioneer in Cutting-Edge IT Solutions</p>
+            <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down" style="animation-delay: 0.4s;">
+                Carrywings Technologies.
+            </h2>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up" style="animation-delay: 0.6s;">
+                Crafting bespoke IT solutions that drive growth and redefine possibilities for your business.
+            <p>
+            <a href="#contact" class="inline-block p-4 bg-white rounded-full shadow-lg cursor-pointer transform hover:scale-110 transition-transform duration-300 animate-fade-in-up flex items-center justify-center space-x-2" style="animation-delay: 0.8s;">
+                <span class="text-gray-800 font-semibold">connect with us </span>
+                <span class="sr-only">Scroll down to contact us</span>
+            </a>
+        </div>
+    </section>
+    </main>
         <section id="who-we-are" class="py-16 sm:py-24 bg-white relative overflow-hidden">
             <div class="container mx-auto px-6 lg:px-8">
                 <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
@@ -189,13 +237,11 @@
                 </h2>
                 <div class="max-w-4xl mx-auto text-lg leading-relaxed text-gray-700">
                     <p class="mb-6 interactive-widget p-4 rounded-lg bg-blue-50 shadow-sm hover:shadow-md">
-                        Established in 2018, **InnovateTech Solutions** is dedicated to guiding our clients through the next generation of business innovation, powered by cutting-edge technology and unparalleled software development and consultation services. We are committed to fostering digital transformation and providing robust technology solutions from the initial idea to final execution, empowering our enterprise clients to outperform the competition.
-                    </p>
+Established in 2018, Carrywings Technologies is a trusted name in software development and technology consulting. We are committed to helping businesses embrace digital transformation by building tailored solutions that enhance operational efficiency and deliver measurable impact. Our expertise spans custom software, web and mobile app development, cloud integration, and emerging technologies.                    </p>
                     <p class="mb-6 interactive-widget p-4 rounded-lg bg-indigo-50 shadow-sm hover:shadow-md">
-                        We pride ourselves on an **agile, collaborative approach**, meticulously crafting customized solutions across the entire digital value chain. Our core philosophy revolves around earning our clients' unwavering trust by consistently delivering dependable products and services, ensuring on-time project completion, and providing reliable support for all their mission-critical applications.
-                    </p>
+We follow an agile, collaborative approach—working closely with clients to understand their goals and challenges. With a strong team of skilled developers, designers, and consultants, we ensure every solution is secure, scalable, and aligned with industry best practices. Our focus on timely delivery and dependable service has helped us build long-term relationships across diverse sectors.                    </p>
                     <p class="interactive-widget p-4 rounded-lg bg-purple-50 shadow-sm hover:shadow-md">
-                        At InnovateTech, we offer cost-effective development services and solutions for projects of all scales, from small ventures to complex medium-sized enterprises. Our team comprises highly qualified software developers and creative designers, each bringing years of profound experience and a passion for innovation to every project.
+From startups to mid-sized enterprises, we have empowered numerous clients to turn their ideas into powerful digital experiences. At Carrywings Technologies, we believe in combining innovation with practicality—offering technology that is not just future-ready, but also rooted in real-world business needs.
                     </p>
                 </div>
 
@@ -1075,6 +1121,11 @@
             </div>
         </section>
     </main>
+<a href="https://wa.link/9ygypw" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.373 0 0 5.373 0 12c0 2.108.552 4.086 1.515 5.82L0 24l6.36-1.506A11.963 11.963 0 0012 24c6.627 0 12-5.373 12-12 0-3.215-1.256-6.23-3.48-8.52zm-8.328 16.617a8.138 8.138 0 01-4.404-1.277l-.316-.198-3.42.809.877-3.33-.206-.34a8.145 8.145 0 0113.514-9.002 8.113 8.113 0 01-5.05 13.338zM16.46 13.8c-.26-.13-1.542-.764-1.78-.85-.236-.087-.408-.13-.58.13s-.665.85-.816 1.02c-.15.17-.3.19-.56.065-.26-.13-1.1-.406-2.1-1.3-.78-.7-1.3-1.57-1.45-1.83-.15-.26-.016-.4.113-.53.116-.115.26-.3.39-.45.13-.15.17-.26.26-.43.086-.17.04-.315-.02-.45-.065-.13-.58-1.39-.8-1.9-.21-.5-.43-.43-.58-.44-.15-.01-.315-.01-.48-.01s-.45.065-.69.315c-.24.26-.93.9-.93 2.2 0 1.3.95 2.56 1.08 2.75.13.17 1.85 2.84 4.5 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.54-.63 1.76-1.24.22-.6.22-1.12.15-1.24-.065-.13-.24-.2-.5-.32z"/>
+  </svg>
+</a>
 
     <footer class="bg-gray-800 text-gray-300 py-10">
         <div class="container mx-auto px-6 text-center text-sm">
@@ -1121,9 +1172,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
