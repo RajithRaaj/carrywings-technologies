@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrywings Technologies - Powering Your Digital Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6; /* Tailwind blue-500 */
+            --secondary-color: #6366f1; /* Tailwind indigo-500 */
+            --gradient-start: #3b82f6;
+            --gradient-end: #6366f1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1a202c; /* Dark grey for headings */
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header animation for "bounce" inspiration */
+        @keyframes headerBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-header-bounce {
+            animation: headerBounce 3s infinite ease-in-out;
+        }
+
+        /* Hero section background overlay and text animations */
+        .hero-overlay {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7));
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-fade-in-down { animation: fadeInDown 1s ease-out forwards; }
+        .animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; }
+        .animate-fade-in { animation: fadeIn 1.5s ease-out forwards; }
+
+        /* General widget hover effects */
+        .interactive-widget {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(0);
+        }
+        .interactive-widget:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Background animated elements (inspired by previous project's SVG animation) */
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            25% { transform: translateY(-5px) rotate(1deg); opacity: 0.65; }
+            50% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            75% { transform: translateY(5px) rotate(-1deg); opacity: 0.65; }
+        }
+        .animated-bg-element {
+            animation: subtleFloat 15s infinite ease-in-out;
+        }
+
+        /* Service button group scroll effect */
+        .service-button-group a {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .service-button-group a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Technology logos */
+        .tech-logo {
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        .tech-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        /* Client Testimonial Card */
+        .testimonial-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Cal.com Widget Styling (iframes are hard to style directly, but we can style the container) */
+        .cal-widget-container {
+            border-radius: 12px;
+            overflow: hidden; /* Ensures iframe content respects border-radius */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transition: all 0.5s ease;
+            background-color: #fff;
+            padding: 1rem; /* Add some padding around the iframe for aesthetics */
+        }
+        .cal-widget-container:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: scale(1.01);
+        }
+
+        /* Animated chevron for scroll indication */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(-25%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+            50% {
+                transform: translateY(0);
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+        .animate-bounce-custom {
+            animation: bounce 1s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <header class="bg-white shadow-lg fixed w-full z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="https://i.ibb.co/L8v8z9m/Chat-GPT-Image-May-30-2025-06-03-52-AM.png" alt="Company Logo" class="h-10 animate-header-bounce">
+                <h1 class="text-2xl font-extrabold text-blue-600 animate-fade-in-down" style="animation-delay: 0.1s;"> </h1>
+            </div>
+            <ul class="flex space-x-8 text-lg font-medium">
+                <li><a href="#hero" class="hover:text-blue-600 transition-colors duration-300">Home</a></li>
+                <li><a href="#who-we-are" class="hover:text-blue-600 transition-colors duration-300">about us</a></li>
+                <li><a href="#services" class="hover:text-blue-600 transition-colors duration-300">Services</a></li>
+                <li><a href="#methodology" class="hover:text-blue-600 transition-colors duration-300">Methodology</a></li>
+                <li><a href="#technology" class="hover:text-blue-600 transition-colors duration-300">Technology</a></li>
+                <li><a href="#agile-workflow" class="hover:text-blue-600 transition-colors duration-300">Agile</a></li>
+                <li><a href="#clients" class="hover:text-blue-600 transition-colors duration-300">Clients</a></li>
+                <li><a href="#testimonials" class="hover:text-blue-600 transition-colors duration-300">Testimonials</a></li>
+                <li><a href="#contact" class="hover:text-blue-600 transition-colors duration-300">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section id="hero" class="relative bg-cover bg-center h-[700px] flex items-center justify-center text-white" style="background-image: url('https://source.unsplash.com/1600x900/?it-company,tech,innovation');">
+            <div class="hero-overlay absolute inset-0"></div>
+            <div class="container mx-auto px-6 text-center z-10">
+                <p class="text-xl md:text-2xl mb-4 animate-fade-in-down" style="animation-delay: 0.2s;">🚀 The Pioneer in Cutting-Edge IT Solutions</p>
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-down" style="animation-delay: 0.4s;">
+                    Carrywings Technologies.
+                </h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up" style="animation-delay: 0.6s;">
+                    Crafting bespoke IT solutions that drive growth and redefine possibilities for your business.
+                <p>
+<a href="#contact" class="inline-block p-4 bg-white rounded-full shadow-lg cursor-pointer transform hover:scale-110 transition-transform duration-300 animate-fade-in-up flex items-center justify-center space-x-2" style="animation-delay: 0.8s;">
+    <span class="text-gray-800 font-semibold">connect with us </span>
+    <span class="sr-only">Scroll down to contact us</span>
+</a>
+            </div>
+        </section>
+
+        <section id="who-we-are" class="py-16 sm:py-24 bg-white relative overflow-hidden">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
+                    <span class="text-blue-600">Who We Are</span>
+                </h2>
+                <div class="max-w-4xl mx-auto text-lg leading-relaxed text-gray-700">
+                    <p class="mb-6 interactive-widget p-4 rounded-lg bg-blue-50 shadow-sm hover:shadow-md">
+                        Established in 2018, **InnovateTech Solutions** is dedicated to guiding our clients through the next generation of business innovation, powered by cutting-edge technology and unparalleled software development and consultation services. We are committed to fostering digital transformation and providing robust technology solutions from the initial idea to final execution, empowering our enterprise clients to outperform the competition.
+                    </p>
+                    <p class="mb-6 interactive-widget p-4 rounded-lg bg-indigo-50 shadow-sm hover:shadow-md">
+                        We pride ourselves on an **agile, collaborative approach**, meticulously crafting customized solutions across the entire digital value chain. Our core philosophy revolves around earning our clients' unwavering trust by consistently delivering dependable products and services, ensuring on-time project completion, and providing reliable support for all their mission-critical applications.
+                    </p>
+                    <p class="interactive-widget p-4 rounded-lg bg-purple-50 shadow-sm hover:shadow-md">
+                        At InnovateTech, we offer cost-effective development services and solutions for projects of all scales, from small ventures to complex medium-sized enterprises. Our team comprises highly qualified software developers and creative designers, each bringing years of profound experience and a passion for innovation to every project.
+                    </p>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8">Discover Our Story</h3>
+                    <div class="max-w-3xl mx-auto interactive-widget p-6 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl shadow-xl">
+                        <div class="relative w-full h-0 pb-[56.25%] bg-gray-200 rounded-lg overflow-hidden">
+                            <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=abcdefg" title="InnovateTech Solutions Company Overview"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600">
+                            *This video provides a brief overview of our approach and commitment to excellence.*
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div aria-hidden="true" class="absolute top-10 left-0 -z-10 pointer-events-none">
+                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-30 transform -translate-x-1/2 animated-bg-element">
+                    <circle cx="200" cy="200" r="180" fill="#BFDBFE" />
+                    <circle cx="200" cy="200" r="120" fill="#93C5FD" />
+                    <circle cx="200" cy="200" r="60" fill="#60A5FA" />
+                </svg>
+            </div>
+            <div aria-hidden="true" class="absolute bottom-10 right-0 -z-10 pointer-events-none">
+                <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-30 transform translate-x-1/2 animated-bg-element" style="animation-delay: 2s;">
+                    <rect x="50" y="50" width="200" height="200" rx="30" fill="#C7D2FE" />
+                    <rect x="75" y="75" width="150" height="150" rx="20" fill="#A78BFA" />
+                </svg>
+            </div>
+        </section>
+
+        <section id="vision-mission-values" class="py-16 sm:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
+                    Our <span class="text-blue-600">Core Principles</span>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="interactive-widget bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="eye" class="w-16 h-16 text-blue-600 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            To be the leading innovator in digital transformation, consistently exceeding client expectations by delivering secure, reliable, and scalable applications that empower businesses to thrive in the dynamic global economy. We envision a future where technology seamlessly bridges business needs and groundbreaking solutions.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="flag" class="w-16 h-16 text-indigo-600 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            To empower our clients with world-class, end-to-end IT solutions. We commit to understanding their in-depth business requirements, bridging the gap between business and technology, and continuously improving our services to maintain a competitive edge. Our mission is to transform ideas into impactful realities.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="heart" class="w-16 h-16 text-purple-600 mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4">Our Values</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            We are driven by integrity, innovation, and client satisfaction. We value continuous improvement, ensuring our team is always at the forefront of state-of-the-art technologies. We adopt international best practice standards, guaranteeing high-quality deliverables and seamless integration across all project phases.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-choose-us" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
+                    Why <span class="text-blue-600">Choose Us?</span>
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="interactive-widget bg-blue-50 p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-blue-600 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Secure & Scalable Solutions</h3>
+                            <p class="text-gray-700 text-sm">
+                                We deliver secure, reliable, and scalable applications that empower businesses to excel in today's rapidly evolving economy. Your growth is our priority.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="interactive-widget bg-indigo-50 p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                        <i data-lucide="award" class="w-10 h-10 text-indigo-600 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Unwavering Client Satisfaction</h3>
+                            <p class="text-gray-700 text-sm">
+                                We gain client satisfaction by fully understanding and addressing your requirements within the minimal time-to-market.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="interactive-widget bg-purple-50 p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                        <i data-lucide="sparkles" class="w-10 h-10 text-purple-600 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Guaranteed Quality</h3>
+                            <p class="text-gray-700 text-sm">
+                                We assure a steady quality by guaranteeing high quality of our deliverables through rigorous testing and best practices.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="interactive-widget bg-green-50 p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                        <i data-lucide="trending-up" class="w-10 h-10 text-green-600 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Continuous Improvement</h3>
+                            <p class="text-gray-700 text-sm">
+                                We maintain continuous improvement by promoting a learning environment, ensuring our employees are trained on state-of-the-art technologies.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="interactive-widget bg-yellow-50 p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                        <i data-lucide="layers" class="w-10 h-10 text-yellow-600 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Robust Methodologies</h3>
+                            <p class="text-gray-700 text-sm">
+                                We utilize object-oriented analysis, design, and testing methodologies for seamless integration and traceability.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="interactive-widget bg-red-50 p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                        <i data-lucide="globe" class="w-10 h-10 text-red-600 mt-1 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Global Standards Adoption</h3>
+                            <p class="text-gray-700 text-sm">
+                                We adopt International & best practice standards, ensuring our solutions are globally competitive and reliable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 sm:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
+                    Our <span class="text-blue-600">Comprehensive Services</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 service-button-group max-w-6xl mx-auto">
+                    <a href="#software-development-services" class="interactive-widget block bg-white p-6 rounded-xl shadow-lg text-center hover:bg-blue-50">
+                        <i data-lucide="code" class="w-16 h-16 text-blue-600 mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold">Software Development</h3>
+                        <p class="text-gray-600 mt-2">Crafting custom software solutions.</p>
+                    </a>
+                    <a href="#web-application-development" class="interactive-widget block bg-white p-6 rounded-xl shadow-lg text-center hover:bg-blue-50">
+                        <i data-lucide="layout" class="w-16 h-16 text-indigo-600 mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold">Web Application Development</h3>
+                        <p class="text-gray-600 mt-2">Building dynamic web experiences.</p>
+                    </a>
+                    <a href="#mobile-application-development" class="interactive-widget block bg-white p-6 rounded-xl shadow-lg text-center hover:bg-blue-50">
+                        <i data-lucide="smartphone" class="w-16 h-16 text-purple-600 mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold">Mobile Application Development</h3>
+                        <p class="text-gray-600 mt-2">Innovating on iOS & Android.</p>
+                    </a>
+                    <a href="#custom-application-development" class="interactive-widget block bg-white p-6 rounded-xl shadow-lg text-center hover:bg-blue-50">
+                        <i data-lucide="tool" class="w-16 h-16 text-green-600 mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold">Custom Application Development</h3>
+                        <p class="text-gray-600 mt-2">Tailored solutions for unique needs.</p>
+                    </a>
+                    <a href="#testing-services" class="interactive-widget block bg-white p-6 rounded-xl shadow-lg text-center hover:bg-blue-50">
+                        <i data-lucide="check-circle" class="w-16 h-16 text-yellow-600 mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold">Testing Services</h3>
+                        <p class="text-gray-600 mt-2">Ensuring flawless performance.</p>
+                    </a>
+                    <a href="#testing-automation" class="interactive-widget block bg-white p-6 rounded-xl shadow-lg text-center hover:bg-blue-50">
+                        <i data-lucide="robot" class="w-16 h-16 text-red-600 mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold">Testing Automation</h3>
+                        <p class="text-gray-600 mt-2">Automating quality assurance.</p>
+                    </a>
+                    <a href="#bpo-services" class="interactive-widget block bg-white p-6 rounded-xl shadow-lg text-center col-span-full md:col-span-2 lg:col-span-1 mx-auto w-full md:w-1/2 lg:w-full">
+                        <i data-lucide="briefcase" class="w-16 h-16 text-teal-600 mb-4 mx-auto"></i>
+                        <h3 class="text-2xl font-bold">BPO Services</h3>
+                        <p class="text-gray-600 mt-2">Optimizing your business processes.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="software-development-services" class="py-16 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-8">
+                    <span class="text-blue-600">Software Development Services</span>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="interactive-widget bg-blue-50 p-6 rounded-xl shadow-lg text-center">
+                        <i data-lucide="monitor" class="w-12 h-12 text-blue-600 mb-4 mx-auto"></i>
+                        <h3 class="text-xl font-bold mb-2">Web Application Development</h3>
+                        <p class="text-gray-700 text-sm">
+                            We design and develop robust web applications that serve as powerful digital platforms, expanding your customer reach and enhancing online engagement. Our expertise covers everything from responsive website development to intricate e-commerce solutions, web multimedia, and advanced search engine optimization strategies. We provide comprehensive web consulting to maximize your ROI.
+                        </p>
+                        <div class="flex flex-wrap justify-center items-center mt-6 gap-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_logo.png/1200px-Java_logo.png" alt="Java" class="h-10 tech-logo" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Microsoft_Azure_Logo.svg" alt="MS.Net" class="h-10 tech-logo" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png" alt="PHP" class="h-10 tech-logo" />
+                            <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular JS" class="h-10 tech-logo" />
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/MySQL_logo.svg/1200px-MySQL_logo.svg.png" alt="MySQL" class="h-10 tech-logo" />
+                        </div>
+                    </div>
+                    <div class="interactive-widget bg-indigo-50 p-6 rounded-xl shadow-lg text-center">
+                        <i data-lucide="smartphone" class="w-12 h-12 text-indigo-600 mb-4 mx-auto"></i>
+                        <h3 class="text-xl font-bold mb-2">Mobile Application Development</h3>
+                        <p class="text-gray-700 text-sm">
+                            From concept to deployment, we deliver high-performance mobile applications across Android and iOS platforms. Our services include native and cross-platform development using cutting-edge frameworks, ensuring exceptional user interfaces and seamless user experiences tailored for businesses of all sizes.
+                        </p>
+                        <div class="flex flex-wrap justify-center items-center mt-6 gap-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1200px-Android_robot.svg.png" alt="Android" class="h-10 tech-logo" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="iOS" class="h-10 tech-logo" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google_Flutter_logo.png" alt="Flutter" class="h-10 tech-logo" />
+                            <img src="https://ionicframework.com/docs/assets/img/logo.svg" alt="Ionic" class="h-10 tech-logo" />
+                        </div>
+                    </div>
+                    <div class="interactive-widget bg-purple-50 p-6 rounded-xl shadow-lg text-center">
+                        <i data-lucide="tool" class="w-12 h-12 text-purple-600 mb-4 mx-auto"></i>
+                        <h3 class="text-xl font-bold mb-2">Custom Application Development</h3>
+                        <p class="text-gray-700 text-sm">
+                            When off-the-shelf solutions fall short, our custom application development services step in. We build bespoke software entirely based on your unique GUI (graphical user-friendly interface) specifications, addressing specific business processes and procedures that packaged programs cannot. Our IT consultants manage your project from analysis to installation.
+                        </p>
+                        <div class="flex flex-wrap justify-center items-center mt-6 gap-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/2560px-Amazon_Web_Services_Logo.svg.png" alt="AWS" class="h-10 tech-logo" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png" alt="Google Cloud" class="h-10 tech-logo" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_Azure_Logo.svg/1200px-Microsoft_Azure_Logo.svg.png" alt="Azure" class="h-10 tech-logo" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testing-services" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-8">
+                    <span class="text-green-600">Testing Services</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="interactive-widget bg-green-50 p-6 rounded-xl shadow-lg">
+                        <i data-lucide="quality" class="w-12 h-12 text-green-600 mb-4 mx-auto block text-center"></i>
+                        <h3 class="text-xl font-bold mb-3 text-center">Quality Assurance Services</h3>
+                        <ul class="list-disc list-inside text-gray-700 text-sm space-y-2">
+                            <li>Review of requirements</li>
+                            <li>Test planning / writing test cases</li>
+                            <li>Integration testing</li>
+                            <li>System testing</li>
+                            <li>Performance testing</li>
+                            <li>Security testing</li>
+                            <li>Cross-browser testing / cross-platform testing</li>
+                            <li>Updating test cases</li>
+                            <li>Regression testing</li>
+                        </ul>
+                    </div>
+                    <div class="interactive-widget bg-yellow-50 p-6 rounded-xl shadow-lg">
+                        <i data-lucide="clipboard-check" class="w-12 h-12 text-yellow-600 mb-4 mx-auto block text-center"></i>
+                        <h3 class="text-xl font-bold mb-3 text-center">Test Management Tools</h3>
+                        <ul class="list-disc list-inside text-gray-700 text-sm space-y-2">
+                            <li>Requirements and Test (RTM) Management for Jira</li>
+                            <li>HP ALM</li>
+                            <li>TFS</li>
+                            <li>Confluence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testing-automation" class="py-16 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-8">
+                    <span class="text-red-600">Testing Automation</span>
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="interactive-widget bg-red-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <img src="https://www.microfocus.com/media/img/product-logos/uft-one-logo.svg" alt="UFT One" class="h-16 mb-4 tech-logo" />
+                        <h3 class="text-xl font-bold mb-2">UFT One</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            Accelerate end-to-end testing with **AI-powered intelligent test automation**. UFT One provides a comprehensive suite for functional and regression testing across various applications.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-orange-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <img src="https://jmeter.apache.org/images/logo.svg" alt="Apache JMeter" class="h-16 mb-4 tech-logo" />
+                        <h3 class="text-xl font-bold mb-2">Apache JMeter</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            **Open-source** performance testing tool for analyzing and measuring the performance of web applications and a variety of services. It offers robust reporting and ease of use.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-yellow-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png" alt="Selenium" class="h-16 mb-4 tech-logo" />
+                        <h3 class="text-xl font-bold mb-2">Selenium</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            A powerful **open-source** tool for automating web browsers. It supports multiple programming languages, works across various operating systems, and is excellent for cross-browser compatibility testing.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-lime-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Protractor" class="h-16 mb-4 tech-logo" /> <h3 class="text-xl font-bold mb-2">Protractor</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            An **easily readable Jasmine framework** for end-to-end testing of Angular applications. It supports data-driven tests and includes all the advantages of Selenium WebDriver with auto-synchronization.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-cyan-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <img src="https://cucumber.io/images/cucumber-logo.svg" alt="Cucumber" class="h-16 mb-4 tech-logo" />
+                        <h3 class="text-xl font-bold mb-2">Cucumber</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            A BDD (Behavior-Driven Development) tool that supports various languages and acts as a crucial bridge between business stakeholders and technical teams, defining behaviors in plain language.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-teal-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <img src="https://www.uipath.com/hubfs/new-uipath-logo-transparent.png" alt="UIpath" class="h-16 mb-4 tech-logo" />
+                        <h3 class="text-xl font-bold mb-2">UIpath</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            A leading Robotic Process Automation (RPA) platform offering **better accuracy**, improved compliance, and fast cost savings by automating repetitive tasks with software robots.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology" class="py-16 sm:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
+                    Our <span class="text-blue-600">Proven Methodology</span>
+                </h2>
+                <p class="max-w-4xl mx-auto text-center text-lg leading-relaxed text-gray-700 mb-12">
+                    Developing and delivering software within time, cost, and quality constraints requires the use of sound engineering principles. Our software engineers have adopted a comprehensive roadmap that ensures timely, high-quality results. This framework provides stability, control, and organization to every activity involved in engineering exceptional software.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    <div class="interactive-widget bg-blue-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="lightbulb" class="w-12 h-12 text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Ideation</h3>
+                        <p class="text-gray-700 text-sm">
+                            Turning initial concepts into tangible ideas, exploring possibilities and defining the core vision.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-indigo-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="clipboard-list" class="w-12 h-12 text-indigo-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Requirements</h3>
+                        <p class="text-gray-700 text-sm">
+                            Thoroughly gathering and documenting client needs to form a clear project blueprint.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-purple-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="brush" class="w-12 h-12 text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Design</h3>
+                        <p class="text-gray-700 text-sm">
+                            Crafting intuitive user interfaces and robust system architectures based on requirements.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-green-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="code" class="w-12 h-12 text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Development</h3>
+                        <p class="text-gray-700 text-sm">
+                            Bringing the design to life with clean, efficient, and scalable code.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-yellow-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="bug" class="w-12 h-12 text-yellow-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Testing</h3>
+                        <p class="text-gray-700 text-sm">
+                            Rigorously testing the software to identify and rectify any defects, ensuring top quality.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-red-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="upload-cloud" class="w-12 h-12 text-red-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Deployment</h3>
+                        <p class="text-gray-700 text-sm">
+                            Seamlessly launching the developed application into its live environment.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-teal-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="hammer" class="w-12 h-12 text-teal-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Maintenance</h3>
+                        <p class="text-gray-700 text-sm">
+                            Ongoing upkeep and updates to ensure the application remains robust and current.
+                        </p>
+                    </div>
+                    <div class="interactive-widget bg-cyan-50 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="life-buoy" class="w-12 h-12 text-cyan-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Support</h3>
+                        <p class="text-gray-700 text-sm">
+                            Providing continuous assistance and troubleshooting for optimal performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
+                    Our <span class="text-blue-600">Technology Stack</span>
+                </h2>
+                <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="interactive-widget bg-blue-50 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                            <i data-lucide="smartphone" class="w-10 h-10 text-blue-600 mr-3"></i> Mobile
+                        </h3>
+                        <ul class="space-y-4 text-gray-700 text-lg">
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 mr-2 flex-shrink-0"></i>Android SDK</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 mr-2 flex-shrink-0"></i>iOS SDK</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 mr-2 flex-shrink-0"></i>Ionic</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-blue-600 mr-2 flex-shrink-0"></i>Flutter</li>
+                        </ul>
+                    </div>
+                    <div class="interactive-widget bg-indigo-50 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                            <i data-lucide="monitor" class="w-10 h-10 text-indigo-600 mr-3"></i> Web
+                        </h3>
+                        <ul class="space-y-4 text-gray-700 text-lg">
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>JavaScript</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>Angular JS</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>Express JS</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>React JS</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>React Native</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>Node JS</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>Angular</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>PHP</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>XML & HTML</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>Dot Net</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-indigo-600 mr-2 flex-shrink-0"></i>WordPress</li>
+                        </ul>
+                    </div>
+                    <div class="interactive-widget bg-purple-50 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                            <i data-lucide="database" class="w-10 h-10 text-purple-600 mr-3"></i> Database
+                        </h3>
+                        <ul class="space-y-4 text-gray-700 text-lg">
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-purple-600 mr-2 flex-shrink-0"></i>MongoDB</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-purple-600 mr-2 flex-shrink-0"></i>SQL</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-purple-600 mr-2 flex-shrink-0"></i>Oracle</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-purple-600 mr-2 flex-shrink-0"></i>MySQL</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-purple-600 mr-2 flex-shrink-0"></i>Dynamo DB</li>
+                            <li class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 text-purple-600 mr-2 flex-shrink-0"></i>Neo4j</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="agile-workflow" class="py-16 sm:py-24 bg-gray-100 min-h-screen flex items-center justify-center">
+            <div class="w-full max-w-3xl mx-auto bg-white rounded-xl shadow-2xl p-6 sm:p-10 border border-gray-100 flex flex-col items-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-indigo-700 mb-8 sm:mb-12">
+                    Our <span class="text-blue-600">Dynamic Agile Workflow</span>
+                </h2>
+                <p class="text-center text-lg text-gray-700 mb-10 max-w-2xl">
+                    Experience unparalleled efficiency and adaptability with our streamlined Agile workflow. From initial concept to final delivery, we ensure transparency, collaboration, and continuous improvement every step of the way.
+                </p>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-blue-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="user" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Customer Input</h3>
+                    <p class="text-sm text-gray-700">Customers or stakeholders share their needs, problems, or ideas they want solved. This input forms the foundation for what features or improvements the product should include.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-green-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="layers" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Product Owner</h3>
+                    <p class="text-sm text-gray-700">The Product Owner collects and organizes the customer input into clear, actionable items. They prioritize these items in the Product Backlog based on business value and urgency.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-orange-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="clipboard-list" class="w-8 h-8 text-orange-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Product Backlog</h3>
+                    <p class="text-sm text-gray-700">The Product Backlog is a dynamic, ordered list of everything that might be needed in the product. It is continuously updated as new requirements come in or priorities shift.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-purple-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="target" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Scrum Master</h3>
+                    <p class="text-sm text-gray-700">The Scrum Master ensures that the Scrum process is being followed correctly. They help remove blockers and support the team’s productivity without acting as a manager.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-yellow-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="users" class="w-8 h-8 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">The Team</h3>
+                    <p class="text-sm text-gray-700">This is a cross-functional group that includes developers, testers, designers, etc. They collaborate to deliver the sprint goals and self-organize their tasks.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-teal-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="calendar-check" class="w-8 h-8 text-teal-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Sprint Planning Meeting</h3>
+                    <p class="text-sm text-gray-700">In this meeting, the team and Product Owner decide what backlog items to include in the upcoming sprint. The team breaks these items into manageable tasks and creates the Sprint Backlog.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-cyan-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="clipboard-list" class="w-8 h-8 text-cyan-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Sprint Backlog</h3>
+                    <p class="text-sm text-gray-700">This is a list of tasks selected from the Product Backlog that the team commits to completing in the sprint. It gives the team a clear focus and helps track their work during the sprint.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-purple-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="clock" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">1-4 Week Sprint</h3>
+                    <p class="text-sm text-gray-700">A sprint is a fixed-length iteration, usually 1 to 4 weeks long. During this time, the team works to turn selected backlog items into a working product increment.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-purple-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="clock" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">24-Hour Sprint (Daily Standup Meeting)</h3>
+                    <p class="text-sm text-gray-700">Every day, the team gathers for a short 15-minute meeting to discuss what was done yesterday, plans for today, and any blockers. It keeps everyone aligned and helps resolve issues quickly.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-purple-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="line-chart" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Burn Down/Up Chart</h3>
+                    <p class="text-sm text-gray-700">This chart visually shows the progress of the sprint by tracking completed vs. remaining work. It helps the team and stakeholders see if the sprint is on track.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-green-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="refresh-cw" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Sprint Review</h3>
+                    <p class="text-sm text-gray-700">At the end of the sprint, the team presents the completed work to the stakeholders. This is a chance to get feedback and adjust the Product Backlog if needed.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-yellow-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="refresh-cw" class="w-8 h-8 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Sprint Retrospective</h3>
+                    <p class="text-sm text-gray-700">The team reflects on the sprint and discusses what went well, what didn’t, and what could be improved. They identify actionable steps to make the next sprint more effective.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-indigo-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="award" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Sprint End Date & Team Deliverable</h3>
+                    <p class="text-sm text-gray-700">The sprint officially ends, and the team delivers a working product increment. This deliverable should meet the agreed-upon Definition of Done and be potentially shippable.</p>
+                </div>
+                <div class="my-4 flex justify-center">
+                    <i data-lucide="chevron-down" class="w-10 h-10 text-indigo-400 animate-bounce-custom"></i>
+                </div>
+
+                <div class="flex flex-col items-center text-center p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-blue-50 w-full max-w-md mx-auto interactive-widget">
+                    <div class="p-3 rounded-full bg-white shadow-inner mb-3">
+                        <i data-lucide="check-circle" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-900">Finished Work</h3>
+                    <p class="text-sm text-gray-700">This refers to the completed, tested, and potentially deployable product increment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="clients" class="bg-slate-50 py-16 sm:py-24 relative overflow-hidden">
+            <div class="container mx-auto px-6 lg:px-8">
+
+                <div class="mb-12 md:mb-16 max-w-xl mx-auto text-center">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-800 tracking-tight">
+                        Our <span class="text-blue-600">Valued Clients</span>
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        We are proud to partner with leading organizations, helping them achieve their digital aspirations.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 md:gap-x-12 md:gap-y-12">
+
+                    <div class="group flex flex-col items-center justify-between p-6 bg-white rounded-xl shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:scale-110 hover:-translate-y-2 min-h-[180px] md:min-h-[200px] interactive-widget">
+                        <img src="https://i.ibb.co/C3stnDGD/SAVE-20250530-043124.jpg" alt="K7 Computing" class="client-logo object-contain h-24 mb-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">K7 Computing</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center justify-between p-6 bg-white rounded-xl shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:scale-110 hover:-translate-y-2 min-h-[180px] md:min-h-[200px] interactive-widget">
+                        <img src="https://i.ibb.co/SDT3Rv0d/SAVE-20250530-043136.jpg" alt="Chennai Metro Rail Limited" class="client-logo object-contain h-24 mb-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Chennai Metro Rail Limited</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center justify-between p-6 bg-white rounded-xl shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:scale-110 hover:-translate-y-2 min-h-[180px] md:min-h-[200px] interactive-widget">
+                        <img src="https://i.ibb.co/JW6km9By/SAVE-20250530-043151.jpg" alt="Greater Chennai Corporation" class="client-logo object-contain h-24 mb-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Greater Chennai Corporation</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center justify-between p-6 bg-white rounded-xl shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:scale-110 hover:-translate-y-2 min-h-[180px] md:min-h-[200px] interactive-widget">
+                        <img src="https://i.ibb.co/JwCgRwCw/SAVE-20250530-043131.jpg" alt="LT Group" class="client-logo object-contain h-24 mb-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">LT Group</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center justify-between p-6 bg-white rounded-xl shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:scale-110 hover:-translate-y-2 min-h-[180px] md:min-h-[200px] interactive-widget">
+                        <img src="https://i.ibb.co/R1Yc8dp/SAVE-20250530-043142.jpg" alt="KKMSoft" class="client-logo object-contain h-24 mb-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">KKMSoft</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center justify-between p-6 bg-white rounded-xl shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:scale-110 hover:-translate-y-2 min-h-[180px] md:min-h-[200px] interactive-widget">
+                        <img src="https://i.ibb.co/W4NBqM3t/SAVE-20250530-043156.jpg" alt="The Warehouse Group" class="client-logo object-contain h-24 mb-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">The Warehouse Group</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div aria-hidden="true" class="absolute bottom-0 right-0 -z-10 pointer-events-none">
+                <svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-70 md:opacity-80 transform translate-x-1/3 translate-y-1/4 sm:translate-x-1/4 sm:translate-y-1/6">
+                    <path d="M600 600C550 500 400 450 300 300C200 150 150 50 200 0C350 150 500 350 600 600Z" fill="#14B8A6" class="animated-bg-element"/>
+                    <path d="M550 580C500 480 380 420 280 280C180 130 140 40 190 0C320 140 450 320 550 580Z" fill="#06B6D4" class="animated-bg-element" transform="translate(30, -50) rotate(10 500 500)" style="animation-delay: 1s;"/>
+                    <path d="M450 550C400 450 300 400 200 250C100 100 80 20 130 0C250 120 350 280 450 550Z" fill="#38BDF8" class="animated-bg-element" transform="translate(-20, -80) rotate(-15 500 500) scale(0.8)" style="animation-delay: 2.5s;"/>
+                </svg>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
+                    What Our <span class="text-blue-600">Clients Say</span>
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="testimonial-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.ibb.co/cX8W8Tb3/IMG-20250530-050626.jpg" alt="Client Profile" class="w-16 h-16 rounded-full object-cover mr-4 shadow-md">
+                            <div>
+                                <p class="font-bold text-lg text-gray-900">Jane Doe</p>
+                                <p class="text-sm text-gray-600">CEO, Tech Solutions Inc.</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "InnovateTech Solutions transformed our outdated systems into a seamless digital experience. Their expertise and dedication were truly exceptional. Highly recommended!"
+                        </p>
+                    </div>
+                    <div class="testimonial-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.ibb.co/cX8W8Tb3/IMG-20250530-050626.jpg" alt="Client Profile" class="w-16 h-16 rounded-full object-cover mr-4 shadow-md">
+                            <div>
+                                <p class="font-bold text-lg text-gray-900">John Smith</p>
+                                <p class="text-sm text-gray-600">Founder, Global Ventures</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "The team at InnovateTech understood our complex needs perfectly. The mobile application they built has significantly boosted our customer engagement."
+                        </p>
+                    </div>
+                    <div class="testimonial-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.ibb.co/cX8W8Tb3/IMG-20250530-050626.jpg" alt="Client Profile" class="w-16 h-16 rounded-full object-cover mr-4 shadow-md">
+                            <div>
+                                <p class="font-bold text-lg text-gray-900">Emily White</p>
+                                <p class="text-sm text-gray-600">Director, Creative Agency</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "Their testing services are top-notch! We confidently launched our product knowing it was thoroughly vetted and optimized for performance and security."
+                        </p>
+                    </div>
+                    <div class="testimonial-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.ibb.co/cX8W8Tb3/IMG-20250530-050626.jpg" alt="Client Profile" class="w-16 h-16 rounded-full object-cover mr-4 shadow-md">
+                            <div>
+                                <p class="font-bold text-lg text-gray-900">Michael Brown</p>
+                                <p class="text-sm text-gray-600">Operations Manager, Supply Chain Co.</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "The custom application streamlined our operations, leading to significant cost savings and improved efficiency. InnovateTech delivered beyond expectations."
+                        </p>
+                    </div>
+                    <div class="testimonial-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.ibb.co/cX8W8Tb3/IMG-20250530-050626.jpg" alt="Client Profile" class="w-16 h-16 rounded-full object-cover mr-4 shadow-md">
+                            <div>
+                                <p class="font-bold text-lg text-gray-900">Sarah Green</p>
+                                <p class="text-sm text-gray-600">CTO, FinTech Startup</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">
+                            "Partnering with InnovateTech was a game-changer for our startup. Their agile approach and cutting-edge technology stack helped us accelerate our product development rapidly."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="book-call" class="py-16 sm:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-12">
+                    Ready to <span class="text-blue-600">Discuss Your Project?</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-lg leading-relaxed text-gray-700 mb-10">
+                    Let's connect and explore how InnovateTech Solutions can bring your vision to life. Book a personalized 1-on-1 call with our experts at your convenience.
+                </p>
+                <div class="max-w-3xl mx-auto cal-widget-container interactive-widget">
+                    <iframe
+                        src="https://cal.com/rajith-raaj/15min"
+                        width="100%"
+                        height="700px"
+                        frameborder="0"
+                        scrolling="no"
+                        title="Book a 15-minute call with Rajith Raaj"
+                        class="rounded-lg">
+                    </iframe>
+                </div>
+                <p class="mt-8 text-sm text-gray-600">
+                    *Click on the widget above to select a suitable time for your introductory call.*
+                </p>
+            </div>
+        </section>
+
+        <section id="news-celebrations" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
+                    Company <span class="text-blue-600">News & Milestones</span>
+                </h2>
+                <div class="max-w-4xl mx-auto bg-blue-50 p-8 rounded-xl shadow-lg interactive-widget">
+                    <img src="https://i.ibb.co/RTLnNC4N/Chat-GPT-Image-May-30-2025-06-03-52-AM.png" alt="Celebration Image" class="w-full h-auto object-cover rounded-lg mb-6 shadow-md">
+                    <h3 class="text-3xl font-bold text-center text-gray-900 mb-4">
+                        Celebrating 7+ Years of Innovation & Excellence!
+                    </h3>
+                    <p class="text-lg text-gray-700 text-center leading-relaxed">
+                        It's with immense pride and gratitude that we announce over seven years of dedicated service in the IT industry. Since our inception, we've had the privilege of partnering with incredible clients, driving forward countless innovative projects, and achieving remarkable milestones. This journey has been fueled by our passion for technology, our commitment to client success, and the relentless efforts of our talented team. Here's to many more years of pushing boundaries and shaping the future of digital solutions!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hiring" class="py-16 sm:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 mb-12">
+                    Join Our <span class="text-blue-600">Dynamic Team!</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-center text-lg leading-relaxed text-gray-700 mb-10">
+                    Are you passionate about technology and innovation? InnovateTech Solutions is rapidly expanding, and we're looking for talented individuals to join our growing family. Explore our exciting career opportunities below and help us build the future of digital solutions.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <div class="interactive-widget bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="code-square" class="w-16 h-16 text-blue-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Developers</h3>
+                        <p class="text-gray-700 mb-4">
+                            We're seeking skilled developers eager to tackle complex challenges and build groundbreaking software.
+                        </p>
+                        <p class="text-blue-700 font-semibold text-sm">Experience: 5-10 Years Needed</p>
+                    </div>
+                    <div class="interactive-widget bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="bug" class="w-16 h-16 text-indigo-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">QA Testers</h3>
+                        <p class="text-gray-700 mb-4">
+                            Ensuring the highest quality, our testers are critical to delivering flawless products.
+                        </p>
+                        <p class="text-indigo-700 font-semibold text-sm">Experience: 7-10 Years Needed</p>
+                    </div>
+                    <div class="interactive-widget bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="bar-chart-2" class="w-16 h-16 text-purple-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Business Analysts</h3>
+                        <p class="text-gray-700 mb-4">
+                            Bridging the gap between business needs and technical solutions.
+                        </p>
+                        <p class="text-purple-700 font-semibold text-sm">Experience: 3+ Years Needed</p>
+                    </div>
+                    <div class="interactive-widget bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <i data-lucide="briefcase" class="w-16 h-16 text-green-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">BPO Professionals</h3>
+                        <p class="text-gray-700 mb-4">
+                            Join our Business Process Optimization team for a rewarding career.
+                        </p>
+                        <p class="text-green-700 font-semibold text-sm">Experience: 4+ Years Needed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 sm:py-24 bg-gradient-to-br from-blue-500 to-indigo-700 text-white">
+            <div class="container mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-extrabold mb-12">
+                    Get In <span class="text-white">Touch</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+                    <div class="text-left bg-blue-600 bg-opacity-80 p-8 rounded-xl shadow-lg interactive-widget">
+                        <h3 class="text-3xl font-bold mb-6">Connect with Us</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <i data-lucide="mail" class="w-8 h-8 text-blue-200 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-blue-200">Email Us</p>
+                                    <a href="mailto:info@innovatetech.com" class="text-xl font-semibold hover:underline">info@innovatetech.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="phone" class="w-8 h-8 text-blue-200 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-blue-200">Call Us</p>
+                                    <a href="tel:+911234567890" class="text-xl font-semibold hover:underline">+91 12345 67890</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="map-pin" class="w-8 h-8 text-blue-200 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-blue-200">Visit Our Office</p>
+                                    <address class="text-xl font-semibold not-italic">
+                                        F2, Aradhana Flats, Aadhi Naidu St, Villivakkam, Chennai, Tamil Nadu 600049
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 flex justify-center space-x-6">
+                            <a href="https://www.instagram.com/yourcompany" target="_blank" class="hover:scale-110 transform transition-transform text-white"><i data-lucide="instagram" class="w-8 h-8"></i><span class="sr-only">Instagram</span></a>
+                            <a href="https://www.linkedin.com/company/yourcompany" target="_blank" class="hover:scale-110 transform transition-transform text-white"><i data-lucide="linkedin" class="w-8 h-8"></i><span class="sr-only">LinkedIn</span></a>
+                            <a href="https://www.facebook.com/yourcompany" target="_blank" class="hover:scale-110 transform transition-transform text-white"><i data-lucide="facebook" class="w-8 h-8"></i><span class="sr-only">Facebook</span></a>
+                        </div>
+                    </div>
+
+                    <div class="text-left bg-blue-600 bg-opacity-80 p-8 rounded-xl shadow-lg interactive-widget">
+                        <h3 class="text-3xl font-bold mb-6">Send Us a Message</h3>
+                        <p class="mb-6 text-blue-100">
+                            Have a question or a project idea? Fill out our inquiry form and we'll get back to you shortly!
+                        </p>
+                        <a href="YOUR_GOOGLE_DOCS_ENQUIRY_FORM_LINK" target="_blank" class="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-bold text-lg rounded-full shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all duration-300">
+                            <i data-lucide="send" class="w-6 h-6 mr-3"></i> Enquire Now
+                        </a>
+                        <p class="mt-4 text-sm text-blue-200">
+                            *This will open a new tab to our secure inquiry form.*
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 bg-white rounded-xl shadow-xl overflow-hidden interactive-widget">
+                    <h3 class="text-3xl font-bold text-gray-800 p-6">Locate Our Office</h3>
+                    <div class="w-full" style="height: 450px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.104279093333!2d80.19830587494541!3d13.08985168715876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526425c2763297%3A0x6b4c3e8a1d7f6a7d!2sF2%2C%20Aradhana%20Flats%2C%20Aadhi%20Naidu%20St%2C%20Villivakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600049!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; <span id="current-year"></span>  carrywings technologies. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#who-we-are" class="hover:text-white transition-colors duration-200">About Us</a>
+                <span class="text-gray-600">|</span>
+                <a href="#services" class="hover:text-white transition-colors duration-200">Services</a>
+                <span class="text-gray-600">|</span>
+                <a href="#contact" class="hover:text-white transition-colors duration-200">Contact</a>
+                <span class="text-gray-600">|</span>
+                <a href="#" class="hover:text-white transition-colors duration-200">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+
+        // Simple scroll to top button (optional, but good for UX on long pages)
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const scrollToTopBtn = document.createElement('button');
+        //     scrollToTopBtn.innerHTML = '<i data-lucide="arrow-up" class="w-6 h-6"></i>';
+        //     scrollToTopBtn.className = 'fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg z-50 opacity-0 transition-opacity duration-300';
+        //     document.body.appendChild(scrollToTopBtn);
+
+        //     scrollToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        //     window.onscroll = () => {
+        //         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        //             scrollToTopBtn.classList.remove('opacity-0');
+        //         } else {
+        //             scrollToTopBtn.classList.add('opacity-0');
+        //         }
+        //     };
+        //     lucide.createIcons(); // Re-initialize icons for the new button
+        // });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
